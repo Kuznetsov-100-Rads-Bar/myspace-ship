@@ -1,4 +1,41 @@
+:root {
+    --color1: #ede4d0;
+    --color2: pink;
+    --color3: #a9bcd0;
+    --color4: rgb(18, 19, 19);
+    --color5: orangered;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background: url(./bg-image.jpg) center/cover;
-    height: 100vh;
+    height: 100vh; /* 100% of the viewport height : L'image doit faire 100% de la taille de l'écran que l'utilisateur as ! */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color1);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* div class="card" a un display block de base : 100% de sa largeur ! Lélement est en block : on va l'annuler pour center horizontalement. Donc on va paramétrer la "card" */
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.5);
+    width: calc(100% - 50px); /* une width de 100% mais avec 50px de marge sur les cotés (25px à gauche et 25px à droite), on aura une width qui ne changera jamais cette propriété là, en faisant ses calculs quelque soit les dimensions !*/
+    padding: 20px 20px 6px; /* Marge intérieur:  3 valeurs en HAUT, GAUCHE et DROITE, et en BAS */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.521);
+    border-radius: 5px;
+    backdrop-filter: blur(5px); /* flou de l'arrière plan */
+}
+
+.card:before {
+    content: "\263B";
+    position: absolute;
+    top: 2px;
+    right: 18px;
+    font-size: 2.8rem;
+    color: var(--color5);
 }
