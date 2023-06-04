@@ -4,6 +4,7 @@
     --color3: #a9bcd0;
     --color4: rgb(18, 19, 19);
     --color5: orangered;
+    --color6: #FF9B8E;
 }
 
 * {
@@ -37,5 +38,162 @@ body {
     top: 2px;
     right: 18px;
     font-size: 2.8rem;
+    color: var(--color5);
+}
+
+h1 {
+    margin-bottom: 24px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 80%; /* 2 colonnes : 20% 1er enfant et 80% son 2ème enfant */
+}
+
+/* C'est le parent du "polygon" */
+.polygon-container {
+    filter: drop-shadow(-1px 6px 3px var(--color5)); /* ombre */
+    /* Mettre le parent en grid */
+    place-self: center left; /* Pour centrer notre élement polygon, déjà, il faut que le parent soit en GRID, Le ".grid-container" : il est en grid. Donc on va centrer le ".polygon-container" cette division */
+}
+
+.polygon {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background: linear-gradient(135deg, var(--color2) 0%, var(--color5) 100%);
+    height: 100px;
+    width: 100px;
+}
+
+.polygon:after {
+    content: "Stalker-fan";
+    position: absolute;
+    color: var(--color1);
+    background: var(--color4);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(344deg);
+    width: 90px;
+    padding: 4px;
+    text-align: center;
+}
+
+p {
+    line-height: 26px; /* l'écartement de la Hauteur de ligne */
+    margin: 20px 0; /* Mettre une marge en haut et en bas */
+    /* Il faut ces 4 élements ci-dessous ! */
+    display: -webkit-box;
+    -webkit-box-orient: vertical; /* Pour que le texte soit vertical */
+    -webkit-line-clamp: 3; /* Pour que le texte soit sur 3 lignes */
+    overflow: hidden; /* Pour que le texte soit caché */
+    text-align: justify;
+}
+
+/* Quand on sélectionne le texte, on paramettre la couleur du background du texte */
+p::selection {
+    background: var(--color6);
+    color: var(--color4);
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0 30px; /* Marge en haut : 20px, à gauche et à droite : 0, et en bas : 30px */
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + label {
+    background: var(--color5);
+    color: var(--color4);
+    transform: scale(1.1);
+    filter: brightness(100%);
+}
+
+/* S'il y a transition, alors la selectionner sur l'élement global, l'élement label, en entrée et en sortie  */
+label {
+    cursor: pointer;
+    border: 1px solid var(--color1);
+    background: var(--color4);
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.2s;
+    user-select: none; /* Pour ne pas que l'utilisateur arrive à pouvoir sélectionner le texte */
+}
+
+.e-mail {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.e-mail input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    /* changer de comportement en mettant  border: 3px solid tansparent par rapport au input[type="text"]:focus */
+    border: 3px solid transparent;
+    /*border: none;*/  /* On enlève la bordure  par rapport au input[type="text"]:focus sinon la division s'écarte quand on écrit sur l'input e-mail */
+    transition: 0.2s;
+    text-align: center;
+    font-size: 1.1rem; /* Préference en rem */
+    color: var(--color5);
+    width: 35%; /* Utiliser en % de préference: on donne une taille dynamique en % pour le width !. Tant qu'il est entre 180px et 300px il va s'allonger ou se rétrecir 35% de la largeur de son parent */
+
+    /* on met 2 conditions (min-width et un max-width)  quand la page sera petite au minimum que l'élement fasse 150px - quand la page sera grande au maximum que l'élement fasse 300px */
+    min-width: 180px; /* Taille minimum de 180px : on s'assure que ça n'ira pas plus bas qu'une certaine taille. Il n'ira jamais plus bas*/
+    max-width: 300px; /* Taille maximum de 300px : on s'assure que ça n'ira pas plus haut qu'une certaine taille on s'étand à 300px */
+}
+
+input[type="text"]:focus {
+    border: 3px solid var(--color5);
+    background: transparent;
+    border-radius: 150px;
+}
+
+input[type="text"]::placeholder {
+    color: var(--color5);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+    cursor: pointer;
+    background: var(--color4);
+    color: var(--color5);
+    border: none;
+    font-size: 1.3rem;
+    padding: 10px 20px; /* 10px en Haut et en Bas , 20px à gauche et à droite */
+    border-radius: 150px;
+    margin: 0 auto; /* Pour centrer le bouton Mais par défaut le bouton est en inline-block : alors mettre le button en display: block */ 
+    display: block; /* Pour centrer le bouton */
+    transition: 0.2s; /* Pour que la transition soit plus fluide, le mettre en entrée et en sortie ici ! */
+}
+
+button:hover {
+    background: var(--color5);
+    color: var(--color4);
+    letter-spacing: 3px;
+}
+
+button:active {
+    transform: scale(1.2);
+}
+
+button:hover + a,
+a:hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+a {
+    color: var(--color2);
+    text-align: center;
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+}
+
+a:visited {
     color: var(--color5);
 }
