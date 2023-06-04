@@ -43,7 +43,29 @@ body {
 
 h1 {
     margin-bottom: 24px;
+    position: relative;
 }
+
+/* A la place de la balise <hr> Mettre en place une barre sous la balise <h1> traverant la .card */
+h1::after {
+    content: "";
+    position: absolute;
+    background: var(--color5);
+    height: 1px;    /* Hauteur de la barre */
+    width: 100%;    /* Largeur de la barre */
+    left: 50%;        /* Position de la barre */
+    bottom: -14px;
+    transform: translateX(-50%) scaleX(0); /* Pour centrer la barre */
+    animation: h1animation 7s ease-in-out forwards; /* On ajoute forwards pour que la barre ne disparaît pas à la fin de l'animation */
+}
+
+@keyframes h1animation {
+    100% {
+        transform: translateX(-50%) scaleX(1);
+    }
+}
+    
+
 
 .grid-container {
     display: grid;
