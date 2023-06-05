@@ -237,7 +237,7 @@ a:visited {
 }
 
 .rocket {
-    height: 60px;
+    height: 70px;
     position: absolute;
     top: 105%;
     filter: drop-shadow(0px 4px 1px var(--color7));
@@ -278,81 +278,108 @@ a:visited {
 }
 
 .viking {
-    height: 60px;
+    height: 70px;
     position: absolute;
     top: 900%;
     left: 10%;
     filter: drop-shadow(0px 4px 1px var(--color7));
     z-index: -1;
-    animation: viking 20s linear;
+    animation: viking 25s linear;
 }
 @keyframes viking {
     0% {
-        top: 90%;
+        top: 93%;
         left: -10%;
         transform: rotate(0deg);
     }
     20% {
-        top: 90%;
+        top: 93%;
         left: 10%;
         transform: rotate(0deg);
     }
     40% {
-        top:  90%;
+        top:  93%;
         left: 20%;
         transform: rotate(0deg);
     }
     60% {
-        top:  90%;
-        left: 40%;
+        top:  93%;
+        left: 45%;
         transform: rotate(0deg);
     }
     80% {
-        top:  90%;
+        top:  93%;
         left: 70%;
         transform: rotate(0deg);
     }
     100% {
-        top:  90%;
+        top:  93%;
         left: 110%;
         transform: rotate(0deg);
     }
 }
 
-    /*
+.lada {
+    height: 140px;
+    position: absolute;
+    top: 0%;
+    left: -25%;
+    filter: drop-shadow(0px 4px 1px var(--color7));
+    z-index: -1;
+    animation: lada 23s linear;
+}
+
+@keyframes lada {
+    0% {
+        top: 0%;
+        left: -6%;
+        transform: rotate(0deg);
+    }
+    10% {
+        top: 7%;
+        left: 0%;
+        transform: rotate(80deg);
+    }
+    20% {
+        top: 20%;
+        left: 14%;
+        transform: rotate(180deg);
+    }
     40% {
-        top:40%;
-        left: 20%;
-        transform: rotate(45deg);
+        top:  35%;
+        left: 26%;
+        transform: rotate(270deg);
     }
     50% {
-        top: 30%;
-        left: 12%;
-        transform: rotate(352deg);
-    }
-    60% {
-        top: 30%;
-        left:100%;
-        transform: rotate(356deg);
-    }
-    70% {
-        top: 30%;
-        left:120%;
+        top:  48%;
+        left: 40%;
         transform: rotate(360deg);
     }
+    60% {
+        top:  65%;
+        left: 55%;
+        transform: rotate(480deg);
+    }
+    70% {
+        top:  84%;
+        left: 70%;
+        transform: rotate(600deg);
+    }
     80% {
-        top: 85%;
-        left:150%;
-        transform: rotate(23deg);
+        top:  90%;
+        left: 88%;
+        transform: rotate(810deg);
     }
     90% {
-        top: 50%;
-        left: 15%;
-        transform: rotate(50deg);
+        top:  100%;
+        left: 90%;
+        transform: rotate(999deg);
     }
     100% {
-        top: 2%;
-        left: 2%;
-        transform: rotate(90deg);
+        top:  108%;
+        left: 110%;
+        transform: rotate(1200deg);
     }
-}*/
+} 
+
+
