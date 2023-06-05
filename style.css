@@ -220,6 +220,7 @@ button:active {
 button:hover + a,
 a:hover {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
 }
 
@@ -228,6 +229,7 @@ a {
     text-align: center;
     display: block;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(20px);
     transition: 0.3s;
 }
