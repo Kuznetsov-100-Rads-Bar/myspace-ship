@@ -5,6 +5,7 @@
     --color4: rgb(18, 19, 19);
     --color5: orangered;
     --color6: #FF9B8E;
+    --color7: #fbca09;
 }
 
 * {
@@ -21,6 +22,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center; /* div class="card" a un display block de base : 100% de sa largeur ! Lélement est en block : on va l'annuler pour center horizontalement. Donc on va paramétrer la "card" */
+    overflow: hidden; /* Pour que l'image ne dépasse pas de la page */
 }
 
 .card {
@@ -56,7 +58,8 @@ h1::after {
     left: 50%;        /* Position de la barre */
     bottom: -14px;
     transform: translateX(-50%) scaleX(0); /* Pour centrer la barre */
-    animation: h1animation 7s ease-in-out forwards; /* On ajoute forwards pour que la barre ne disparaît pas à la fin de l'animation */
+    animation: h1animation 6s ease-in-out forwards; /* On ajoute forwards pour que la barre ne disparaît pas à la fin de l'animation */
+    /*transform-origin: right;*/ /* Pour que la barre commence à droite */
 }
 
 @keyframes h1animation {
@@ -144,6 +147,19 @@ label {
     user-select: none; /* Pour ne pas que l'utilisateur arrive à pouvoir sélectionner le texte */
 }
 
+label:first-of-type:hover {
+    animation: labelOne 1s infinite linear;
+}
+@keyframes labelOne {
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+    
+
 .e-mail {
     text-align: center;
     margin-bottom: 20px;
@@ -219,3 +235,124 @@ a {
 a:visited {
     color: var(--color5);
 }
+
+.rocket {
+    height: 60px;
+    position: absolute;
+    top: 105%;
+    filter: drop-shadow(0px 4px 1px var(--color7));
+    z-index: -1;
+    animation: rocket 20s linear;
+}
+@keyframes rocket {
+    0% {
+        top: 105%;
+        right: 22%;
+        transform: rotate(-22deg);
+    }
+    20% {
+        top:80%;
+        right: 22%;
+        transform: rotate(-22deg);
+    }
+    40% {
+        top:  50%;
+        right: 22%;
+        transform: rotate(-22deg);
+    }
+    60% {
+        top:  6%;
+        right: 22%;
+        transform: rotate(-22deg);
+    }
+    80% {
+        top:  -22%;
+        right: 22%;
+        transform: rotate(-22deg);
+    }
+    100% {
+        top:  -122%;
+        right: 22%;
+        transform: rotate(-22deg);
+    }
+}
+
+.viking {
+    height: 60px;
+    position: absolute;
+    top: 900%;
+    left: 10%;
+    filter: drop-shadow(0px 4px 1px var(--color7));
+    z-index: -1;
+    animation: viking 20s linear;
+}
+@keyframes viking {
+    0% {
+        top: 90%;
+        left: -10%;
+        transform: rotate(0deg);
+    }
+    20% {
+        top: 90%;
+        left: 10%;
+        transform: rotate(0deg);
+    }
+    40% {
+        top:  90%;
+        left: 20%;
+        transform: rotate(0deg);
+    }
+    60% {
+        top:  90%;
+        left: 40%;
+        transform: rotate(0deg);
+    }
+    80% {
+        top:  90%;
+        left: 70%;
+        transform: rotate(0deg);
+    }
+    100% {
+        top:  90%;
+        left: 110%;
+        transform: rotate(0deg);
+    }
+}
+
+    /*
+    40% {
+        top:40%;
+        left: 20%;
+        transform: rotate(45deg);
+    }
+    50% {
+        top: 30%;
+        left: 12%;
+        transform: rotate(352deg);
+    }
+    60% {
+        top: 30%;
+        left:100%;
+        transform: rotate(356deg);
+    }
+    70% {
+        top: 30%;
+        left:120%;
+        transform: rotate(360deg);
+    }
+    80% {
+        top: 85%;
+        left:150%;
+        transform: rotate(23deg);
+    }
+    90% {
+        top: 50%;
+        left: 15%;
+        transform: rotate(50deg);
+    }
+    100% {
+        top: 2%;
+        left: 2%;
+        transform: rotate(90deg);
+    }
+}*/
